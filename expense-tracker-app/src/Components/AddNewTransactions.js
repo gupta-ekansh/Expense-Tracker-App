@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { toast} from 'react-hot-toast';
 // import Card from './Card';
 // import { HandleClick } from './History';
 function AddNewTransaction(props){
@@ -19,6 +20,14 @@ function AddNewTransaction(props){
         }
         console.log(object);
         props.setArr((prev) => [...prev , object]);
+        // window.alert("New task Added Successfully");
+        toast.success('Task Added Successfully');
+    }
+    const handleChangeText = (e) => {
+        setText(e.target.value);
+    }
+    const handleChangeAmount = (e) => {
+        setAmount(e.target.value);
     }
     return (
         <div>
@@ -26,12 +35,12 @@ function AddNewTransaction(props){
             <div className = "inputs">
                 <div className = "input-text">
                     <p>Text</p>
-                    <input type = "text" placeholder = "Enter text..." onChange={(e) => setText(e.target.value)}/>
+                    <input type = "text" placeholder = "Enter text..." onChange={(e) => handleChangeText}/>
                 </div>
                 <div className = "input-amount">
                     <p className = "p1">Amount</p>
                     <p className = "p2">(negative-expense , positive-income)</p>
-                    <input type = "text" placeholder = "Enter amount..." onChange={(e) => setAmount(e.target.value)}/>
+                    <input type = "text" placeholder = "Enter amount..." onChange={(e) => handleChangeAmount}/>
                 </div>
             </div>
             <button onClick={() => handleClick()} type = "submit" className = "add-transaction">Add Transaction</button>

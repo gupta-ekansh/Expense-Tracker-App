@@ -1,4 +1,5 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { toast } from "react-hot-toast";
 function History (props) {
     // const [hover , setHover] = useState(false);
     var arr = props.arr;
@@ -6,6 +7,7 @@ function History (props) {
         var temp = arr.filter(item => item.key !== value.key)
         console.log(temp);
         props.setArr((prev) => temp)
+        toast.success("Task Deleted Successfully");
     }
     return (
         <>
