@@ -6,24 +6,8 @@ import { useState } from "react";
 // import { HandleClick } from "./History";
 
 function Card(){
-    // const [arr , setArr] = useState([]);
-    var arr = [
-        {
-            name: 'Cash' , 
-            amount: '500',
-            type: '+'
-        },
-        {
-            name: 'Book' ,
-            amount: '40' , 
-            type: '-'
-        },
-        {
-            name: 'Camera' ,
-            amount: '200' ,
-            type: '-'
-        },
-    ]
+    const [arr , setArr] = useState([
+    ]);
     return (
         <div className="card">
             <h2>Expense Tracker</h2>
@@ -31,7 +15,7 @@ function Card(){
             <IncomeExpense arr = {arr}/>
             <History arr = {arr}/>
             {/* <HandleClick arr = {arr}/> */}
-            <AddNewTransaction arr = {arr}/>
+            <AddNewTransaction arr = {arr} setArr = {setArr}/>
         </div>
     )
 }

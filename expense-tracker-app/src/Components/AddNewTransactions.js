@@ -11,9 +11,10 @@ function AddNewTransaction(props){
         var temp = amount.slice(1 , amount.size);
         var object = {
             name ,
-            temp ,  
+            amount: temp ,  
             type
         }
+        props.setArr((prev) => [...prev , object]);
     }
     return (
         <div>
@@ -26,7 +27,7 @@ function AddNewTransaction(props){
                 <div className = "input-amount">
                     <p className = "p1">Amount</p>
                     <p className = "p2">(negative-expense , positive-income)</p>
-                    <input type = "number" placeholder = "Enter amount..." onChange={(e) => setAmount(e.target.value)}/>
+                    <input type = "text" placeholder = "Enter amount..." onChange={(e) => setAmount(e.target.value)}/>
                 </div>
             </div>
             <button onClick={() => handleClick()} type = "submit" className = "add-transaction">Add Transaction</button>

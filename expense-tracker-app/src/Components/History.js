@@ -1,5 +1,6 @@
 function History (props) {
     var arr = props.arr;
+    console.log(arr);
     return (
         <>
             <p className = "history">History</p>
