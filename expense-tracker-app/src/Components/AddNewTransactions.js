@@ -5,7 +5,7 @@ import { toast} from 'react-hot-toast';
 function AddNewTransaction(props){
     var array = props.arr;
     const [text , setText] = useState('');
-    const [amount , setAmount] = useState(0);
+    const [amount , setAmount] = useState('0');
     const handleClick = () => {
         var name = text;
         var type = amount[0];
@@ -23,24 +23,18 @@ function AddNewTransaction(props){
         // window.alert("New task Added Successfully");
         toast.success('Task Added Successfully');
     }
-    const handleChangeText = (e) => {
-        setText(e.target.value);
-    }
-    const handleChangeAmount = (e) => {
-        setAmount(e.target.value);
-    }
     return (
         <div>
             <p className = "add-new-transaction">Add New Transaction</p>
             <div className = "inputs">
                 <div className = "input-text">
                     <p>Text</p>
-                    <input type = "text" placeholder = "Enter text..." onChange={(e) => handleChangeText}/>
+                    <input type = "text" placeholder = "Enter text..." onChange={(e) => setText(e.target.value)}/>
                 </div>
                 <div className = "input-amount">
                     <p className = "p1">Amount</p>
                     <p className = "p2">(negative-expense , positive-income)</p>
-                    <input type = "text" placeholder = "Enter amount..." onChange={(e) => handleChangeAmount}/>
+                    <input type = "text" placeholder = "Enter amount..." onChange={(e) => setAmount(e.target.value)}/>
                 </div>
             </div>
             <button onClick={() => handleClick()} type = "submit" className = "add-transaction">Add Transaction</button>
