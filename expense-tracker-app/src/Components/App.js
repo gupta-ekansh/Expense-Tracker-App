@@ -1,9 +1,9 @@
-import './App.css';
-
+import "../Styles/App.css";
+import Card from "./Card";
 function App() {
   return (
     <div className="App">
-
+      <Card/>
     </div>
   );
 }
