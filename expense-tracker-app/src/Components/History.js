@@ -1,6 +1,12 @@
+import { useState } from "react";
 function History (props) {
+    // const [hover , setHover] = useState(false);
     var arr = props.arr;
-    console.log(arr);
+    const handleDelete = (value) => {
+        var temp = arr.filter(item => item.key !== value.key)
+        console.log(temp);
+        props.setArr((prev) => temp)
+    }
     return (
         <>
             <p className = "history">History</p>
@@ -9,8 +15,10 @@ function History (props) {
                     arr.map((value) => {
                         return (
                             <div className = "value">
-                                <p className = "arr-item">
+
+                                <p className = "arr-item" >
                                     <span className = "name">{value.name}</span>
+                                    <button className="hover" onClick={() => handleDelete(value)}>X</button>
                                     <span className = "type-amount">{value.type}{value.amount}</span>
                                 </p>
                                 {

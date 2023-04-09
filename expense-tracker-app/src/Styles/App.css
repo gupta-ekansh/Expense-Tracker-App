@@ -112,11 +112,15 @@ body > #root > div {
     background-color: lightgray;
     /* border: 1px solid #000; */
   }
+.value {
+    /* width: 400px; */
+    /* background-color: red; */
+}
 .arr-item {
     height: 35px;
     width: 98%;
     background-color: white;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: space-between; 
     margin-top: 5px;
@@ -125,11 +129,11 @@ body > #root > div {
 .name {
     font-weight: 600;
     position: relative;
-    left: 5%;
+    left:10%;
 }
 .type-amount {
     position: relative;
-    right: 10px;
+    right: 50px;
 }
 .type {
     height: 36px;
@@ -189,4 +193,11 @@ body > #root > div {
 }
 .add-transaction:hover {
     background-color:rgba(137, 43, 226, 0.76);
+}
+.hover {
+    background-color: red;;
+    color: white;
+    border: none;
+    position: relative;
+    left: -45%;
 }

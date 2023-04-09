@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import Card from './Card';
+// import Card from './Card';
 // import { HandleClick } from './History';
 function AddNewTransaction(props){
     var array = props.arr;
@@ -9,11 +9,15 @@ function AddNewTransaction(props){
         var name = text;
         var type = amount[0];
         var temp = amount.slice(1 , amount.size);
+        var id = array.length + 1;
+        console.log(array);
         var object = {
             name ,
             amount: temp ,  
-            type
+            type , 
+            key: id
         }
+        console.log(object);
         props.setArr((prev) => [...prev , object]);
     }
     return (
